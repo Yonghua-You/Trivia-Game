@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+	<title>Welcome to Triva Game!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="homeApp">
+
+	<div class="container">
+
+		<div ng-controller="HomeCtrl">
+			<h1><p style="color: darkred" th:text="${tip}"/></h1>
+			<table class="table table-hover" align="center">
+				<thead>
+					<tr>
+						<th>Next Start Time</th>
+						<th>Play!</th>
+					</tr>
+				</thead>
+				<tbody>				
+					<tr>
+						<td>
+							<h4>{{game.startDateTime}}</h4>
+						</td>
+						<td>
+							<a href="/game/{{game.guid}}/play" class="btn btn-primary">
+								<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	
+	<!--<div th:replace="fragments/angular :: angular">...</div>-->
+	<script type="text/javascript" src="../js/homeApp.js"
+		        th:src="@{/js/homeApp.js}"></script>
+		        
+</body>
+</html>
+

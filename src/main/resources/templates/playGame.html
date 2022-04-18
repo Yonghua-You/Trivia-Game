@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Welcome to Triva Game!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="playApp" th:attr="ng-init='gameGuidInit('+${game.guid} + ')'">
+
+	<div class="container">
+	
+		<div class="col-sm-2"></div>
+		
+		<div class="col-sm-8" ng-controller="PlayGameCtrl">
+		
+			<div ng-show="playing">
+				<h2 class="form-signin-heading">{{currentQuestion.text}}</h2>
+				<hr/>	
+				
+				<div class="form-group">
+		        	<div ng-repeat="answer in currentAnswers"> 
+		        		<div class="radio">
+		        			<input type="radio" ng-model="$parent.answerChoices" ng-value="{{answer.id}}" name="answerChoices">{{answer.text}}</input>
+		        		</div>
+					</div>
+					<button th:text="submit" class="btn btn-lg btn-primary btn-block" type="submit" ng-click="answerQuestion(answerChoices)"></button>
+		        </div>
+			</div>
+			
+			<div ng-hide="playing">
+				<hr/>
+				
+
+			</div>
+			
+		</div>
+		
+		<div class="col-sm-2"></div>
+	</div>
+	 
+	<script type="text/javascript" src="../js/playApp.js"
+		        th:src="@{/js/playApp.js}"></script>
+</body>
+</html>
