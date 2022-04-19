@@ -71,11 +71,17 @@
 				function(response) {
 					questionResult = response.data;
 					if(questionResult.correctQuestions == 1){
-						$http.get("/api/game/" + $scope.guid + "/question/" +  question.id + "?onlyValid=true")
+						$http.get("/api/game/" + $scope.gameGuid + "/question/" +  question.id + "?onlyValid=true")
 							.then(
 								function(response) {
 									question = response.data;
+									if(question == undefined)
+									{
+										window.location.href="/";
+										return;
+									}
 									$scope.setQuestion(question.id);
+									$scope.initialize();
 								},
 								function(reason) {
 									$scope.error = "Could not fetch the data.";
