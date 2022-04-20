@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+  <title>Welcome to Triva Game!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+  <h1>List of answers<h1/>
+  <div th:if="${ not#lists.isEmpty(answers)}">
+    <table>
+      <tr>
+        <th>Answer ID</th>
+        <th>Answer Description</th>
+        <th>Selected Players</th>
+      </tr>
+      <tr th:each="answer : ${answers}">
+        <td th:text="${answer.id}"></td>
+        <td th:text="${answer.text}"></td>
+        <td th:text="${answer.playerCount}"></td>
+      </tr>
+      <table>
+  </div>
+
+</body>
+</html>

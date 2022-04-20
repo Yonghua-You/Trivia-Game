@@ -81,14 +81,14 @@
 										return;
 									}
 									$scope.setQuestion(question.id);
-									$scope.initialize();
+									//$scope.initialize();
 								},
 								function(reason) {
 									$scope.error = "Could not fetch the data.";
 								}
 							);
 					}else{
-						window.location.href="/";
+						window.location.href="/game/" + $scope.gameGuid + "/question/" +  question.id + "/answers" ;
 
 					}
 

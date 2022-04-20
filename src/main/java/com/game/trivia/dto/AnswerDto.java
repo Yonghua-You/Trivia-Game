@@ -31,11 +31,19 @@ public class AnswerDto {
     @Size(max = 50)
     private String text;
 
+    @Future(message = "the number of player who select the answer")
+    private Integer playerCount;
+
     @ManyToOne
     private Integer order;
 
     @NotNull
     @Future(message = "create date must be between game start and end date")
     private LocalDateTime createdDateTime;
+
+    public AnswerDto() {
+
+    }
+
 
 }

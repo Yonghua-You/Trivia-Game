@@ -40,8 +40,8 @@ public class Answer {
     @Column(name = "create_date", nullable = false)
     private LocalDateTime createdDateTime;
 
-    @Column(name = "player")
-    private String player;
+    @Column(name = "playerCount")
+    private Integer playerCount;
 
 
     @Override

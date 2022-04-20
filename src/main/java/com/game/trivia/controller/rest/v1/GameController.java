@@ -244,12 +244,18 @@ public class GameController {
     {
         Game game = service.searchGameByGuid(UUID.fromString(guid));
         Result result = service.checkAnswer(game, answersBundles);
+        answersBundles.stream().forEach(answer->{
+            Answer theAnswer = answerService.findAnswerById(answer.getSelectedAnswer());
+            Integer count = theAnswer.getPlayerCount() + 1;
+            theAnswer.setPlayerCount(count);
+            answerService.update(theAnswer);
+        });
         if(result.getCorrectQuestions() == 0)
         {
 //            httpSession.invalidate();
             httpSession.setAttribute("guid", guid);
             System.out.println(httpSession.getId());
-            response.sendRedirect("/");
+            response.sendRedirect("/game/" + game.getGuid() +"/question/" + question_id +"/answers");
             return new ResponseEntity<Result>(result, HttpStatus.OK);
         }
         return new ResponseEntity<Result>(result, HttpStatus.OK);
