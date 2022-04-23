@@ -2,10 +2,7 @@ package com.game.trivia.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Generated;
-import lombok.Getter;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -18,7 +15,8 @@ import java.util.stream.Stream;
 
 @Entity
 @Table(name = "answer")
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Generated
 public class Answer {
@@ -32,6 +30,7 @@ public class Answer {
     @ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 //    @ManyToOne
     @JoinColumn(name="question_id", nullable = false)
+    //@JsonIgnore
     private Question question;
 
     @Column(name = "a_order")
@@ -44,9 +43,9 @@ public class Answer {
     private Integer playerCount;
 
 
-    @Override
-    public String toString() {
-        return "Answer [text=" + text + ", question=" + question + ", order=" + order + ", createdDate=" + createdDateTime
-                + "]";
-    }
+//    @Override
+//    public String toString() {
+//        return "Answer [text=" + text + ", question=" + question + ", order=" + order + ", createdDate=" + createdDateTime
+//                + "]";
+//    }
 }
