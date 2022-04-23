@@ -2,7 +2,7 @@
 
 	var app = angular.module("homeApp", []);
 
-	var homeCtrl = function($scope, $http) {
+	var homeCtrl = function($scope, $rootScope, $http, $interval) {
 
 		$scope.getFutureGame = function() {
 
@@ -17,11 +17,18 @@
 					}
 				);
 		}
+
+		$scope.callAtInterval = function() {
+			console.log("Interval occurred");
+			$scope.getFutureGame();
+		}
 	
-		$scope.getFutureGame();
+		$interval($scope.callAtInterval, 5000);
 		
 	};
 
-	app.controller("HomeCtrl", ["$scope", "$http", homeCtrl]);
+
+
+	app.controller("HomeCtrl", ["$scope", "$rootScope", "$http", "$interval" , homeCtrl]);
 
 }());

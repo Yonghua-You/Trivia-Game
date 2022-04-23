@@ -9,18 +9,22 @@
 </head>
 <body>
   <h1>List of answers<h1/>
-  <div th:if="${ not#lists.isEmpty(answers)}">
-    <table>
-      <tr>
-        <th>Answer ID</th>
-        <th>Answer Description</th>
-        <th>Selected Players</th>
-      </tr>
-      <tr th:each="answer : ${answers}">
-        <td th:text="${answer.id}"></td>
-        <td th:text="${answer.text}"></td>
-        <td th:text="${answer.playerCount}"></td>
-      </tr>
+  <div class="container" th:if="${ not#lists.isEmpty(answers)}">
+    <table class="table table-hover" align="center">
+      <thead>
+        <tr>
+          <th>Answer ID</th>
+          <th>Answer Description</th>
+          <th>Selected Players</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="answer : ${answers}">
+          <td th:text="${answer.id}"></td>
+          <td th:text="${answer.text}"></td>
+          <td th:text="${answer.playerCount}"></td>
+        </tr>
+      </tbody>
       <table>
   </div>
 
