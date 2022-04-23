@@ -22,3 +22,18 @@ $ mvn package -DskipTests
 $ java -jar -Dspring.profiles.active=h2 target/Trivia-Game-<version>.jar
 ```
 The Swagger UI is available at `http://localhost:8080/swagger-ui/index.html`.
+
+## Tests
+### Maven
+* Run only unit tests:
+```bash
+$ mvn clean test
+```
+* Run only integration tests:
+```bash
+$ mvn clean failsafe:integration-test
+```
+* Run unit and integration tests:
+```bash
+$ mvn clean verify
+
