@@ -18,7 +18,6 @@ public class GameValidStartDateTimeValidator implements ConstraintValidator<Game
     @Override
     public boolean isValid(GameDto gameDto, ConstraintValidatorContext constraintValidatorContext) {
         LOGGER.debug("Start Date and time of the game: " +  gameDto.getStartDateTime().toString() + " Current date and time: "  + LocalDateTime.now().toString());
-        return LocalDateTime.now().isBefore(gameDto.getStartDateTime())
-                && gameDto.getStartDateTime().isBefore(LocalDateTime.now().plusDays(1));
+        return LocalDateTime.now().isBefore(gameDto.getStartDateTime());
     }
 }
