@@ -5,3 +5,20 @@ HQ trivia game spring boot project
 - The application should allow running multiple games simultaneously.
 - The application should allow a reasonably large number of players to participate in each game (think hundreds).
 - The application should display statistics about player choices at the end of each round (how many players have chosen each answer).
+# Up & Running
+### Maven
+```bash
+$ git clone https://github.com/Yonghua-You/Trivia-Game.git
+$ cd Trivia-Game
+$ mvn spring-boot:run -Dspring-boot.run.profiles=h2
+```
+The Swagger UI is available at `http://localhost:8080/swagger-ui/index.html`.
+
+### Executable JAR
+```bash
+$ git clone https://github.com/Yonghua-You/Trivia-Game.git
+$ cd Trivia-Game
+$ mvn package -DskipTests
+$ java -jar -Dspring.profiles.active=h2 target/Trivia-Game-<version>.jar
+```
+The Swagger UI is available at `http://localhost:8080/swagger-ui/index.html`.
