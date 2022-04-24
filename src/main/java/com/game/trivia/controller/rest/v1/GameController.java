@@ -128,7 +128,7 @@ public class GameController {
         }
         for (int i = 0; i < questions.size(); i++)
         {
-            if(questions.get(i).getOrder() == currentQuestionOrder)
+            if(questions.get(i).getOrder() == currentQuestionOrder && i + 1 != questions.size())
             {
                 return new ResponseEntity(EntityModel.of(QuestionMapper.INSTANCE.toQuestionDto(questions.get(i + 1))), HttpStatus.OK);
             }

@@ -94,23 +94,19 @@ public class GameService {
     @Transactional
     public Result checkAnswer(Game game, List<Response> answersBundles) {
         Result results = new Result();
-
         for (Question question : game.getQuestions()) {
-            boolean isFound = false;
+
 
             if (!question.getIsValid()) {
                 continue;
             }
             Optional<Response> answer = answersBundles.stream().filter(a->a.getQuestion().equals(question.getId())).findFirst();
             if (answer.isPresent()) {
-                isFound = true;
                 results.addAnswer(questionService.checkIsCorrectAnswer(question, answer.get().getSelectedAnswer()));
                 break;
             }
 
-            if (!isFound) {
-                throw new NotFoundException("No answer found for question: " + question.getText());
-            }
+
         }
 
         return results;

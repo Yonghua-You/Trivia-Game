@@ -2,8 +2,10 @@ package com.game.trivia.controller.web;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -18,6 +20,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -51,20 +54,29 @@ public class WebGameController {
 
 	@RequestMapping(value = "/game/{guid}/question/{question_id}/answers", method = RequestMethod.GET)
 	public ModelAndView getAnswers(
+			HttpServletRequest request,
 			@PathVariable(name = "guid") String guid,
-			@PathVariable(name = "question_id") Long question_id
+			@PathVariable(name = "question_id") Long question_id,
+			@RequestParam(name = "currentOrder") Optional<Integer> order
 	) {
 		Game game = gameService.searchGameByGuid(UUID.fromString(guid));
 		List<Question> questions = game.getQuestions();
 		Question q = questions.stream().filter(question->question.getId().equals(question_id)).findFirst().get();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("answers", q.getAnswers());
+		if(order.isPresent()) {
+			String host =  request.getRequestURL().substring(0, request.getRequestURL().indexOf("/"));
+			mav.addObject("nextQuestionUrl", host + "/game/" + game.getGuid() + "/play/question/" + order.get());
+		}
 		mav.setViewName("answerStatistics");
 		return mav;
 	}
 
-	@RequestMapping(value = "/game/{guid}/play", method = RequestMethod.GET)
-	public ModelAndView playGame(@PathVariable UUID guid, HttpSession session) {
+	@RequestMapping(value = "/game/{guid}/play/question/{q_order}", method = RequestMethod.GET)
+	public ModelAndView playGame(
+			@PathVariable UUID guid,
+			@PathVariable(name = "q_order") int currentQuestionOrder,
+			HttpSession session) {
 		if(!session.isNew() && session.getAttribute("guid").equals(guid.toString()))
 		{
 			ModelAndView mav = new ModelAndView();
