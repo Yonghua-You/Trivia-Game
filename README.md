@@ -112,4 +112,20 @@ Fill the login form as follows and click on Connect:
 * Choose Heroku Git and configure your local code IDE to hook with git repository at '
 https://git.heroku.com/trivia-game-app-heroku.git'
 * When push any new changes, Heroku will auto build and delopy your application like the attached screenshot. and the app will be available at 'http://trivia-game-app-heroku.herokuapp.com'
-![heroku deployment](/readme/heroku_activity.png)
+![heroku deployment_1](/readme/heroku_git_repository.png)
+![heroku deployment_2](/readme/heroku_activity.png)
+
+
+### Trivia Game Work Flow
+* The home page: The page will keep pulling until a future game is avaible.
+![trivia game_1](/readme/trivia_game_home.png)
+* One question/answer page: When playing start by clicking the button at the home page, the first question page will show up
+![trivia game_2](/readme/trivia_game_question_1.png)
+* Answers statistic page: After clicking submit button, the page will show all answers statistics 
+![trivia game_3](/readme/trivia_game_question_1_stat.png)
+* Next question/answer page: After clicking button at the static page, will jump to the page
+![trivia game_4](/readme/trivia_game_question_2.png)
+* Answers static page: if this is the last round of question/answer page, click the button will jump to home page again
+![trivia game_5](/readme/trivia_game_question_2_stat.png)
+* Failed/error page: When failed to choose answer and try to play the same game, error information will show up
+![trivia game_6](/readme/trivia_game_fail_error.png)
