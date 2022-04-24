@@ -37,3 +37,59 @@ $ mvn clean failsafe:integration-test
 ```bash
 $ mvn clean verify
 
+### Swagger UI
+The API can be tested via the Swagger UI:
+
+![Swagger UI Main View](/readme/swagger-main-view.png)
+
+For example, to add a new game, expand the `POST` operation. Then click on the `Try it out`, add the payload below to the `Request Body` text area, and click on the `Execute`:
+```json
+{
+  "canceled": false,
+  "endDateTime": "2022-04-26T15:30:08.455Z",
+  "guid": "3fa85f64-5717-4562-b3fc-2c963f69afa6",
+  "id": 1,
+  "questions": [
+    {
+      "answers": [
+        {
+          "createdDateTime": "2022-04-23T15:30:08.455Z",
+          "id": 1,
+          "order": 1,
+          "playerCount": 0,
+          "text": "answer 1"
+        }
+      ],
+      "createdDateTime": "2022-04-23T15:30:08.455Z",
+      "id": 1,
+      "isValid": true,
+      "order": 1,
+      "text": "question 1"
+    },
+{
+      "answers": [
+        {
+          "createdDateTime": "2022-04-23T15:30:08.455Z",
+          "id": 2,
+          "order": 1,
+          "playerCount": 0,
+          "text": "answer 2"
+        }
+      ],
+      "createdDateTime": "2022-04-23T15:30:08.455Z",
+      "id": 2,
+      "isValid": true,
+      "order": 2,
+      "text": "question 2"
+    }
+  ],
+  "startDateTime": "2022-04-25T15:30:08.455Z",
+  "version": 0
+}
+```
+![Swagger post create game](/readme/swagger-post-create-game.png)
+
+If the operation is successful, you will get the following response:
+
+![Swagger post create game](/readme/swagger_post_create_game_response.png)
+
