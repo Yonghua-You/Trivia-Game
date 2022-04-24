@@ -87,9 +87,29 @@ For example, to add a new game, expand the `POST` operation. Then click on the `
   "version": 0
 }
 ```
-![Swagger post create game](/readme/swagger-post-create-game.png)
+![Swagger post create game](/readme/swagger_post_create_game.png)
 
 If the operation is successful, you will get the following response:
 
 ![Swagger post create game](/readme/swagger_post_create_game_response.png)
 
+### H2 Console
+When running with the `h2` profile, the H2 console is available at `http://trivia-game-app-heroku.herokuapp.com/h2-console/login.jsp`.
+JDBC URL is the same one from (spring.datasource.url) the spring boot appliction.properties file
+Fill the login form as follows and click on Connect:
+* Saved Settings: **Generic H2 (Embedded)**
+* Setting Name: **Generic H2 (Embedded)**
+* Driver class: **org.h2.Driver**
+* JDBC URL: **jdbc:h2:mem:trivia;IGNORECASE=TRUE**
+* User Name: **sa**
+* Password:
+
+![H2 Console Login](/readme/h2_login.png)
+![H2 Console Main View](/readme/h2_query.png)
+
+### HEROKU Deployment
+* Create a new application "trivia-game-app-heroku"
+* Choose Heroku Git and configure your local code IDE to hook with git repository at '
+https://git.heroku.com/trivia-game-app-heroku.git'
+* When push any new changes, Heroku will auto build and delopy your application like the attached screenshot. and the app will be available at 'http://trivia-game-app-heroku.herokuapp.com'
+![heroku deployment](/readme/heroku_activity.png)
