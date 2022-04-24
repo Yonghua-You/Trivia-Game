@@ -87,7 +87,7 @@ For example, to add a new game, expand the `POST` operation. Then click on the `
   "version": 0
 }
 ```
-![Swagger post create game](/readme/swagger-post-create-game.png)
+![Swagger post create game](/readme/swagger_post_create_game.png)
 
 If the operation is successful, you will get the following response:
 
