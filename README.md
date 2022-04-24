@@ -106,3 +106,10 @@ Fill the login form as follows and click on Connect:
 
 ![H2 Console Login](/readme/h2_login.png)
 ![H2 Console Main View](/readme/h2_query.png)
+
+### HEROKU Deployment
+* Create a new application "trivia-game-app-heroku"
+* Choose Heroku Git and configure your local code IDE to hook with git repository at '
+https://git.heroku.com/trivia-game-app-heroku.git'
+* When push any new changes, Heroku will auto build and delopy your application like the attached screenshot. and the app will be available at 'http://trivia-game-app-heroku.herokuapp.com'
+![heroku deployment](/readme/heroku_activity.png)
