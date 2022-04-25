@@ -18,7 +18,41 @@ In addition, there are a few optional yet recommended installations:
 
 * [Git](https://git-scm.com)
 * Your favorte IDE. I am using [Intellji](https://www.jetbrains.com/idea/).
-* UI is developed using AngularJS 1.8.2 (https://angularjs.org/) and thymeleaf html template (https://www.thymeleaf.org/index.html).
+
+# Tehcnologies Used
+
+### Backend
+
+#### Java
+
+* [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html) - Main Backend Language
+* [Maven](https://maven.apache.org/) - Dependency Management
+
+#### The Spring Family
+
+* [Spring Boot](https://projects.spring.io/spring-boot/) - The Framework of Frameworks
+* [Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html) - The Web framework
+* [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/) - Abstraction Layer on top of JPA
+
+#### Databases
+
+* [H2](http://www.h2database.com/html/main.html) - Simple RDBMS to use for this demo purposes.
+* [Hibernate](http://findbugs.sourceforge.net) - ORM
+
+#### Testing
+
+* [JUnit](http://junit.org/junit5/) - The main Testing Framework.
+* [Jmeter](https://jmeter.apache.org) - perfromance/integration tests.
+
+
+### Frontend
+
+* [HTML/CSS/JS](https://en.wikipedia.org/wiki/HTML) - Just HTML/CSS/JS. 
+* [Bootstrap](http://getbootstrap.com/2.3.2/) - Design Framework.
+* [AngularJS 1.8.2](https://angularjs.org) - Frontend framework.
+* [Thymeleaf](http://www.thymeleaf.org) - Templating language used to render the final web page.
+
+
 
 # Up & Running
 ### Maven
