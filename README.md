@@ -52,6 +52,8 @@ In addition, there are a few optional yet recommended installations:
 * [AngularJS 1.8.2](https://angularjs.org) - Frontend framework.
 * [Thymeleaf](http://www.thymeleaf.org) - Templating language used to render the final web page.
 
+### API documentation
+* [swagger](https://swagger.io/tools/swagger-ui/) - Swagger tools takes the hard work out of generating and maintaining your API docs, ensuring your documentation stays up-to-date as your API evolves
 
 
 # Up & Running
