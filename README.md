@@ -72,7 +72,6 @@ $ cd Trivia-Game
 $ mvn package -DskipTests
 $ java -jar -Dspring.profiles.active=h2 target/Trivia-Game-<version>.jar
 ```
-The Swagger UI is available at `http://localhost:8080/swagger-ui/index.html`.
 
 ## Tests
 ### Maven
@@ -89,9 +88,9 @@ $ mvn clean failsafe:integration-test
 $ mvn clean verify
 
 ### Swagger UI
-The API can be tested via the Swagger UI:
+The API can be tested via the [Swagger UI](http://trivia-game-app-heroku.herokuapp.com/swagger-ui/index.html):
 
-![Swagger UI Main View](/readme/swagger-main-view.png)
+![Swagger UI Main View](/readme/swagger_main_view.png)
 
 For example, to add a new game, expand the `POST` operation. Then click on the `Try it out`, add the payload below to the `Request Body` text area, and click on the `Execute`:
 ```json
