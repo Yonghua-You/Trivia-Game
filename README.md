@@ -86,9 +86,10 @@ $ mvn clean failsafe:integration-test
 * Run unit and integration tests:
 ```bash
 $ mvn clean verify
+```
+### [Swagger UI](http://trivia-game-app-heroku.herokuapp.com/swagger-ui/index.html)
 
-### Swagger UI
-The API can be tested via the [Swagger UI](http://trivia-game-app-heroku.herokuapp.com/swagger-ui/index.html):
+The API can be tested via the Swagger UI at http://trivia-game-app-heroku.herokuapp.com/swagger-ui/index.html:
 
 ![Swagger UI Main View](/readme/swagger_main_view.png)
 
