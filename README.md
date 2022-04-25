@@ -5,6 +5,21 @@ HQ trivia game spring boot project
 - The application should allow running multiple games simultaneously.
 - The application should allow a reasonably large number of players to participate in each game (think hundreds).
 - The application should display statistics about player choices at the end of each round (how many players have chosen each answer).
+
+# Environment
+
+In order to run Trivia game you will need:
+
+* [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html) - Main Backend Language
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [H2](https://www.h2database.com/html/main.html) - The default RDBMS.
+
+In addition, there are a few optional yet recommended installations:
+
+* [Git](https://git-scm.com)
+* Your favorte IDE. I am using [Intellji](https://www.jetbrains.com/idea/).
+* UI is developed using AngularJS 1.8.2 (https://angularjs.org/) and thymeleaf html template (https://www.thymeleaf.org/index.html).
+
 # Up & Running
 ### Maven
 ```bash
